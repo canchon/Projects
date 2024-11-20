@@ -1,6 +1,6 @@
 const fetchData = (module, accion, parameters) => {
     return new Promise((resolve, reject) => {
-        const url = "https://api.thingspeak.com/channels/2754061/feeds.json?api_key=I07CKSIW92TBS2PI"
+        const url = "https://api.thingspeak.com/channels/2754061/feeds.json?api_key=I07CKSIW92TBS2PI&days=30"
         const json = {
             'module': module,
             'accion': accion,
@@ -27,7 +27,8 @@ const bringData = async () => {
         let i = 0
         const rowTable = document.getElementById("row_table")
         rowTable.innerHTML = ""
-        for (const e of response.feeds) {
+
+        for (const e of response.feeds.reverse()) {
             i++
             rowTable.innerHTML += `
             <!--<tr >
@@ -51,7 +52,7 @@ const bringData = async () => {
 
 const formatDate = (DateResponse) => {
     let newDate = new Date(DateResponse)
-    newDate.setHours(newDate.getHours() - 5)
+    newDate.setHours(newDate.getHours() - 0)
     return newDate.toLocaleString()
 }
 
