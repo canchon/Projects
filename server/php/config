@@ -1,9 +1,9 @@
 {
     "conexion": {
         "server": "localhost",
-        "user": "id22148244_root",
-        "password": "Rocket2024*",
-        "database": "id22148244_rocket",
+        "user": "if0_37705870",
+        "password": "StY27kwA8GGi",
+        "database": "if0_37705870_articulos",
         "port": "3306"
     }
 }

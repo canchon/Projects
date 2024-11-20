@@ -1,5 +1,4 @@
 body {
-  /* background-image: url("../src/playa.jpg"); */
   background-repeat: no-repeat;
   margin: 0;
   border: 0;
@@ -8,7 +7,6 @@ body {
   display: flex;
   flex-direction: column;
   height: max-content;
-  min-height: 600px;
 }
 
 .principal {
@@ -17,6 +15,7 @@ body {
   height: auto;
   border: solid green 1px;
   overflow: hidden;
+  min-height: 70vh
 }
 
 .shelf {
@@ -65,7 +64,8 @@ body {
   align-items: center;
 }
 
-.header__cabecera--logo>h1 {
+.header__cabecera--logo>h1>a {
+  text-decoration: none;
   font-size: 3em;
   margin: 0px 0px 0px 30px;
   color: #2de233;
@@ -121,24 +121,60 @@ body {
   margin: 0;
 }
 
-.header>menu {
+.menu {
   margin: 0;
   background-color: black;
   height: 4rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  list-style-type: none;
 }
 
-.header>menu>a {
+.menu>li>a {
   margin: 0px 20px;
   text-decoration: none;
   color: white;
 }
 
-.header>menu>a:hover {
+.menu>li {
+  margin: 0px 20px;
+  text-decoration: none;
+  color: white;
+  /* position: absolute; */
+}
+
+.menu>li:hover {
   border-top: #2de233 solid 1px;
   border-bottom: #2de233 solid 1px;
+}
+
+
+/* Estilos del submenú */
+.submenu {
+  list-style-type: none;
+  padding: 5px;
+  margin: 0;
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: black;
+}
+
+.submenu>li>a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+}
+
+/* Mostrar el submenú al pasar el ratón sobre el elemento principal */
+.menu>li:hover>.submenu {
+  display: block;
+}
+
+.submenu>li>a:hover{
+  color: #2de233;
 }
 
 /* footer */
